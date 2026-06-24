@@ -2,6 +2,7 @@ import org.chocosolver.solver.Model;
 import org.chocosolver.solver.variables.IntVar;
 import org.chocosolver.solver.Solution;
 
+
 /* The Problem: The Scheduling Nightmare
 
 We have 5 technicians (Marc, Sophie, Ali, Julie, Paul) and 5 train sets (T1, T2, T3, T4, T5) that urgently require inspection tonight.
@@ -11,6 +12,7 @@ The Absolute Rule: One technician can only be assigned to one train, and each tr
 The Qualification Constraints (Business Rules):
 - Marc (Technician 1) does not have the electrical certification required to work on Train 5. 
 - Julie (Technician 4) must absolutely be assigned to Train 2, as it matches her specific expertise.*/
+
 
 public class AffectationMaintenance {
     public static void main(String[] args) {
