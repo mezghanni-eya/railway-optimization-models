@@ -7,28 +7,28 @@ public class AffectationMaintenance {
         
         Model model = new Model("Planning de Maintenance");
 
-        // 1. Les Variables : Un tableau de 5 techniciens. 
-        // Chacun doit se voir assigner une valeur de 1 à 5 (l'ID du train)
+        // 1. Variables : table of 5 technicians. 
+        // Each must be assigned a value from 1 to 5 (the train ID).
         IntVar[] techniciens = model.intVarArray("Techs", 5, 1, 5);
 
-        // 2. LA CONTRAINTE GLOBALE
-        // Magie : on ordonne que toutes les valeurs du tableau soient différentes.
-        // C'est ce qui empêche 2 techniciens d'être sur le même train.
+        // 2. THE GLOBAL CONSTRAINT
+        // We enforce that all values in the array must be distinct.
+        // This is what prevents 2 technicians from being assigned to the same train.
         model.allDifferent(techniciens).post();
 
-        // 3. Les contraintes métiers spécifiques
-        // Rappel : en Java, l'index commence à 0. Donc Marc est techniciens[0].
-        
-        // Marc (Tech 1) ne peut pas faire le train 5
+        // 3. Specific business constraints
+        // Reminder: in Java, indexes start at 0. Therefore, Marc is technicians[0].
+
+        // Marc (Tech 1) cannot work on train 5
         model.arithm(techniciens[0], "!=", 5).post();
         
-        // Julie (Tech 4) DOIT faire le train 2
+        // Julie (Tech 4) SHOULD mwork on train 2
         model.arithm(techniciens[3], "=", 2).post();
 
-        // 4. Résolution (On cherche juste UNE solution valide, pas de maximisation ici)
+        // 4. Solution (we look for ONLY ONE valid solution, no maximisation here)
         Solution solution = model.getSolver().findSolution();
 
-        // 5. Affichage
+        // 5. Display
         if (solution != null) {
             System.out.println("--- PLANNING DE NUIT ---");
             System.out.println("Marc   (Tech 1) -> Train " + solution.getIntVal(techniciens[0]));
@@ -38,6 +38,7 @@ public class AffectationMaintenance {
             System.out.println("Paul   (Tech 5) -> Train " + solution.getIntVal(techniciens[4]));
         } else {
             System.out.println("Aucun planning possible avec ces contraintes !");
+            System.out.println("No planning possible with these constraints !");
         }
     }
 }
