@@ -27,8 +27,10 @@ Ce dépôt regroupe une série de modèles d'optimisation basés sur la Programm
 * **Solveur :** Choco-solver (Bibliothèque Open Source de Programmation par Contraintes)
 
 
-#ENGLISH VERSION ~~ VERSION ANGLAISE
+
 # 🚂 Railway Optimization Models
+
+#ENGLISH VERSION ~~ VERSION ANGLAISE
 
 ## 📌 Context & Objective
 This repository contains a series of optimization models based on Constraint Programming. The objective is to model and solve complex problems related to the logistics, scheduling, and operations of railway transport networks.
