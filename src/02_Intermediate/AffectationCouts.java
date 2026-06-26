@@ -8,35 +8,28 @@ PROBLEM DEFINITION: THE MULTIMODAL FREIGHT TERMINAL SCHEDULING
 
 The Scenario: The Multimodal Freight Terminal
 
-As the Chief Engineer of a major SNCF freight terminal, you must manage the 
-unloading of 3 cargo trains (Train A, Train B, Train C) tonight. The objective 
-is to finish the entire operation as quickly as possible (Minimizing the Makespan), 
-subject to strict physical, human, and operational constraints.
+As the Chief Engineer of a major SNCF freight terminal, I must manage the unloading of 3 cargo trains (Train A, Train B, Train C) tonight. The objective 
+is to finish the entire operation as quickly as possible (Minimizing the Makespan), subject to strict physical, human, and operational constraints.
 
 1. Equipment Constraints (The Cranes)
-Your terminal has a maximum capacity of 4 heavy gantry cranes operational 
-simultaneously.
+The terminal has a maximum capacity of 4 heavy gantry cranes operational simultaneously.
 - Train A is heavy: it requires 2 cranes continuously during its unloading.
 - Train B is massive: it requires 3 cranes continuously during its unloading.
 - Train C is small: it only requires 1 crane.
 
 2. Human Resource Constraints (The Assignment Matrix)
-You have 3 stevedore teams (Team 1, Team 2, Team 3). A team can be assigned to 
-exactly one train, and each train must be assigned to exactly one team. 
+There are 3 stevedore teams (Team 1, Team 2, Team 3). A team can be assigned to exactly one train, and each train must be assigned to exactly one team. 
 
-The unloading duration depends heavily on the team's familiarity with the cargo. 
-The processing time matrix (in hours) is defined as follows:
+The unloading duration depends heavily on the team's familiarity with the cargo. The processing time matrix (in hours) is defined as follows:
 - Team 1: [Train A: 5h, Train B: 8h, Train C: 2h]
 - Team 2: [Train A: 7h, Train B: 4h, Train C: 3h]
 - Team 3: [Train A: 6h, Train B: 6h, Train C: 4h]
 
-3. Operational & Business Logic Constraints (Precedence)
-Train C contains ultra-fresh produce. However, due to limited platform and dock 
-space, these goods must be stored exactly where the cargo from Train A is currently 
+3. Operational & Business Logic Constraints (Precedence) 
+Train C contains ultra-fresh produce. However, due to limited platform and dock space, these goods must be stored exactly where the cargo from Train A is currently 
 staged.
 
-Strict Dependency: It is physically impossible to start unloading Train C until 
-the unloading process of Train A is fully completed.*/
+Strict Dependency: It is physically impossible to start unloading Train C until the unloading process of Train A is fully completed.*/
 
 
 
